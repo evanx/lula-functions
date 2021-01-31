@@ -1,0 +1,39 @@
+{
+  "name": "lula-sync",
+  "version": "0.0.1",
+  "description": "Sync Redis Stream to PostgreSQL",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "testing:pretty": "NODE_ENV=testing LOG_PRETTY=true node index.js",
+    "testing:slow": "NODE_ENV=testing LOG_PRETTY=true LOOP_DELAY=1000 yarn start",
+    "error:start": "NODE_ENV=development TEST_ERR=start node index.js",
+    "debug": "node --inspect-brk=9229 index.js",
+    "xadd": "node --inspect-brk=9229 test/xadd",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evanx/lula-sync.git"
+  },
+  "author": "Evan Summers",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/evanx/lula-sync/issues"
+  },
+  "homepage": "https://github.com/evanx/lula-sync#readme",
+  "dependencies": {
+    "config": "^3.3.3",
+    "ioredis": "^4.19.2",
+    "pg": "^8.5.1",
+    "pino": "^6.7.0",
+    "pino-pretty": "^4.3.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-prettier": "^3.2.0",
+    "prettier": "^2.2.1"
+  }
+}
