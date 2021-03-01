@@ -6,7 +6,7 @@
       "request": "launch",
       "name": "debug",
       "stopOnEntry": false,
-      "runtimeExecutable": "yarn",
+      "runtimeExecutable": "/usr/local/bin/yarn",
       "runtimeArgs": ["debug"],
       "cwd": "${workspaceFolder}",
       "outputCapture": "std",
@@ -14,29 +14,12 @@
       "skipFiles": ["<node_internals>/**"],
       "env": {
         "NODE_ENV": "development",
+        "MONITOR": "monitoring-ingester",
         "LOG_PRETTY": "true",
         "LOG_LOCAL": "true",
         "EXIT_NOTIFY": "notify:debug:t",
         "LOOP_DELAY": "4000",
         "TEST_ERR": ""
-      }
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "adhoc",
-      "stopOnEntry": false,
-      "runtimeExecutable": "yarn",
-      "runtimeArgs": ["adhoc"],
-      "cwd": "${workspaceFolder}",
-      "outputCapture": "std",
-      "port": 9229,
-      "skipFiles": ["<node_internals>/**"],
-      "env": {
-        "LOG_PRETTY": "true",
-        "NODE_ENV": "testing",
-        "TEST_ERR": "",
-        "LOOP_DELAY": "1000"
       }
     }
   ]

@@ -1,6 +1,12 @@
 module.exports = {
   spec: {
     name: 'hello-world',
+    endpoints: {
+      getAudienceLabel: {
+        type: 'async-function',
+        returns: 'string',
+      },
+    },
   },
   config: { audienceLabel: 'world' },
   setup: async ({ config, monitor, redis }) => {

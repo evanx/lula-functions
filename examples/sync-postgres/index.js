@@ -63,10 +63,7 @@ module.exports = async (app) => {
       ' where _enabled = true' +
       ' and redis_host_key = $1' +
       ' and redis_stream_key = $2',
-    [
-      config.redis.hostKey,
-      config.redis.connect.keyPrefix + config.redis.streamKey,
-    ],
+    [config.redis.hostKey, config.redis.keyPrefix + config.redis.streamKey],
   )
   const streamRows = streamsRes.rows
   assert.strictEqual(streamRows.length, 1, 'streamRows.length')

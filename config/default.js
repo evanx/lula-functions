@@ -1,16 +1,23 @@
 module.exports = {
   lula: {
+    activeIntervalMs: 1000,
+    inputStream: {
+      xreadgroupCount: 10,
+    },
     loop: {
-      delay: '2000',
+      delay: 2000,
     },
     redis: {
-      connect: {
+      default: {
         url: 'redis://localhost:6379',
         keyPrefix: 'lf:',
       },
+      monitor: {},
+      lula: {},
     },
-    logger: {
-      name: 'lula-functions',
+    monitor: {
+      source: 'lf',
+      maxLength: 999000,
       level: 'info',
     },
   },

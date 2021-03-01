@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "dev": "NODE_ENV=development LOG_PRETTY=true LOG_LOCAL=true node index.js",
     "testing:pretty": "NODE_ENV=testing LOG_PRETTY=true node index.js",
     "testing:slow": "NODE_ENV=testing LOG_PRETTY=true LOOP_DELAY=1000 yarn start",
     "error:start": "NODE_ENV=development TEST_ERR=start node index.js",
